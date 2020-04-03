@@ -8,33 +8,33 @@ import java.util.Stack;
  */
 public class LongestValidParentheses_32 {
 
-    //暴力解法，对每个偶数长度的子字符串进行判断
-
-    public int longestValidParentheses(String s) {
-        int maxLen=0;
+    //辅助栈
+    public static int longestValidParentheses(String s) {
+        Stack<Integer> stack = new Stack<>();
+        int maxLen = 0;
+        int start = 0;
         for (int i = 0; i < s.length(); i++) {
-            for (int j = i+2; j <= s.length(); j+=2) {
-                if(isVaild(s.substring(i,j))){
-                    maxLen=Math.max(maxLen,j-i);
+            if (s.charAt(i) == '(') {
+                stack.push(i);
+            } else {
+                if (stack.isEmpty()) {
+                    start = i + 1;
+                } else {
+                    stack.pop();
+                    if (stack.isEmpty()) {
+                        maxLen = Math.max(maxLen, i - start + 1);
+                    } else {
+                        maxLen = Math.max(maxLen, i - stack.peek());
+                    }
                 }
             }
         }
         return maxLen;
     }
 
-    //判断字符串是否符合要求
 
-    public boolean isVaild(String s){
-        Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < s.length(); i++) {
-            if(s.charAt(i)=='('){
-                stack.push('(');
-            }else if(!stack.isEmpty() && stack.peek()=='('){
-                stack.pop();
-            }else {
-                return false;
-            }
-        }
-        return stack.isEmpty();
+    public static void main(String[] args) {
+        String s = "()())))(()";
+        System.out.println(longestValidParentheses(s));
     }
 }
