@@ -62,7 +62,7 @@
 | 169  | [169多数元素.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/169多数元素.md) | 简单 |
 | 198  | [198打家劫舍.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/198打家劫舍.md) | 简单 |
 | 200  | [200岛屿数量.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/200岛屿数量.md) | 中等 |
-| 206  | [206 反转链表.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/206 反转链表.md) | 简单 |
+| 206  | [206反转链表.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/206反转链表.md) | 简单 |
 | 207  |                                                              | 中等 |
 | 208  |                                                              | 中等 |
 | 215  | [215数组中的第K个最大元素.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/215数组中的第K个最大元素.md) | 中等 |
@@ -78,7 +78,7 @@
 | 283  | [283移动零.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/283移动零.md) | 简单 |
 | 287  | [287寻找重复数.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/287寻找重复数.md) | 中等 |
 | 297  | [297二叉树的序列化和反序列化.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/297二叉树的序列化和反序列化.md) | 困难 |
-| 300  | [300 最长上升子序列.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/300 最长上升子序列.md) | 中等 |
+| 300  | [300最长上升子序列.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/300最长上升子序列.md) | 中等 |
 | 301  |                                                              | 困难 |
 | 309  | [309最佳买卖股票时机含冷冻期.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/309最佳买卖股票时机含冷冻期.md) | 中等 |
 | 312  |                                                              | 困难 |
@@ -97,7 +97,7 @@
 | 494  | [494目标和.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/494目标和.md) | 中等 |
 | 538  | [538把二叉搜索树转换为累加数.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/538把二叉搜索树转换为累加数.md) | 简单 |
 | 543  | [543二叉树的直径.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/543二叉树的直径.md) | 简单 |
-| 560  | [560 和为k的子数组.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/560 和为k的子数组.md) | 中等 |
+| 560  | [560和为k的子数组.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/560和为k的子数组.md) | 中等 |
 | 581  |                                                              | 简单 |
 | 617  | [617合并二叉树.md](https://github.com/BarryBean/LeetCodeTop100/blob/master/Notes/617合并二叉树.md) | 简单 |
 | 621  |                                                              | 中等 |
