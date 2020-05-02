@@ -8,8 +8,6 @@ package com.company;
  * @Date:2020/2/28 19:47
  */
 public class NumTrees_96 {
-    private static int sum = 0;
-
     public static int numTrees(int n) {
         int[] dp = new int[n + 1];
         dp[0] = 1;
@@ -21,9 +19,5 @@ public class NumTrees_96 {
             }
         }
         return dp[n];
-    }
-
-    public static void main(String[] args) {
-        System.out.println(numTrees(5));
     }
 }

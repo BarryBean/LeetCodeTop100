@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @date 2019-11-26 19:45
  */
 public class NextPermutation_31 {
-    // 前提：字典序算法
+    // 计算字典序算法
     // 1.从右往左，找出第一个左边小于右边的数，记为list[a]
     // 2.重新从右往左，找出第一个大于list[a]的数，设为list[b]
     // 3.交换list[a],list[b]
@@ -42,14 +42,5 @@ public class NextPermutation_31 {
             Arrays.sort(nums, a+1, length);
         }
 
-    }
-
-    public static void main(String[] args) {
-        //{8,3,9,6,4,7,5,2,1}
-        int[] nums={1,1,5};
-        nextPermutation(nums);
-        for (int i = 0; i < nums.length; i++) {
-            System.out.println(nums[i]);
-        }
     }
 }

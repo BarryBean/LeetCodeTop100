@@ -34,7 +34,7 @@ public class UniquePaths_62 {
     }
 
     /**
-     * 大佬解法，空间复杂度O(N)
+     * 空间复杂度O(N)
      *
      * @param m
      * @param n
@@ -49,11 +49,6 @@ public class UniquePaths_62 {
             }
         }
         return cur[n - 1];
-    }
-
-
-    public static void main(String[] args) {
-        System.out.println(uniquePaths(4, 3));
     }
 }
 

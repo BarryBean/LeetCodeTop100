@@ -69,6 +69,7 @@ public class MinPathSum_64 {
 
     /**
      * 用原本的数组作为备忘录
+     *
      * @param grid
      * @return
      */
@@ -76,13 +77,15 @@ public class MinPathSum_64 {
         if (grid == null) {
             return 0;
         }
-        for (int i = grid.length - 1; i >= 0; i--) {
-            for (int j = grid[0].length - 1; j >= 0; j--) {
-                if (i == grid.length - 1 && j != grid[0].length - 1)
+        int m = grid.length - 1;
+        int n = grid[0].length - 1;
+        for (int i = m; i >= 0; i--) {
+            for (int j = n; j >= 0; j--) {
+                if (i == m && j != n)
                     grid[i][j] = grid[i][j] + grid[i][j + 1];
-                else if (j == grid[0].length - 1 && i != grid.length - 1)
+                else if (j == n && i != m)
                     grid[i][j] = grid[i][j] + grid[i + 1][j];
-                else if (j != grid[0].length - 1 && i != grid.length - 1)
+                else if (j != n && i != m)
                     grid[i][j] = grid[i][j] + Math.min(grid[i + 1][j], grid[i][j + 1]);
             }
         }

@@ -25,31 +25,41 @@ public class LevelOrder_102 {
             List<Integer> list = new ArrayList<>();
             int size = queue.size();
             while (size-- > 0) {
-                TreeNode tmp = queue.poll();
-                if (tmp == null) {
-                    continue;
+                TreeNode node = queue.poll();
+                list.add(node.val);
+                if (node.left != null) {
+                    queue.add(node.left);
                 }
-                list.add(tmp.val);
-                queue.add(tmp.left);
-                queue.add(tmp.right);
-            }
-            if(list.size()==0){
-                continue;
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
             }
             lists.add(list);
         }
         return lists;
     }
 
-    public static void main(String[] args) {
-        TreeNode root1 = new TreeNode(3);
-        root1.left = new TreeNode(9);
-        root1.right = new TreeNode(20);
-        root1.left.left = new TreeNode(16);
-        root1.left.right = new TreeNode(4);
-        root1.right.left = new TreeNode(5);
+    //递归解法
+    List<List<Integer>> levels = new ArrayList<List<Integer>>();
 
-        List<List<Integer>> lists = levelOrder(root1);
-        System.out.println(lists);
+    public void helper(TreeNode node, int level) {
+        // start the current level
+        if (levels.size() == level)
+            levels.add(new ArrayList<Integer>());
+
+        // fulfil the current level
+        levels.get(level).add(node.val);
+
+        // process child nodes for the next level
+        if (node.left != null)
+            helper(node.left, level + 1);
+        if (node.right != null)
+            helper(node.right, level + 1);
+    }
+
+    public List<List<Integer>> levelOrder1(TreeNode root) {
+        if (root == null) return levels;
+        helper(root, 0);
+        return levels;
     }
 }

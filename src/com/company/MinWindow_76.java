@@ -115,11 +115,4 @@ public class MinWindow_76 {
         return result;
     }
 
-
-    public static void main(String[] args) {
-        String s = "abfswabwda";
-        String t = "aab";
-        System.out.println(minWindow(s, t));
-        System.out.println(minWindow1(s, t));
-    }
 }

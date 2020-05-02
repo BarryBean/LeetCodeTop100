@@ -46,36 +46,4 @@ public class Exist_79 {
         memo[i][j] = 0;
         return result;
     }
-
-    public static void main(String[] args) {
-        char[][] chars = {{'A', 'B', 'C', 'E'},
-                {'S', 'F', 'C', 'S'},
-                {'A', 'D', 'E', 'E'}};
-        char[][] chars1 = {{'A'}};
-        System.out.println(exist(chars, "ABCB"));
-        System.out.println(exist(chars, "ABCCED"));
-        System.out.println(exist(chars, "SEEDASFBA"));
-        System.out.println(exist(chars1, "A"));
-
-    }
-
-    public int[] exchange(int[] nums) {
-        int left = 0, right = nums.length - 1;
-        int cur=0;
-        while (left<right){
-            if(nums[cur]%2==1){
-                swap(nums,cur,left++);
-                cur++;
-            }else {
-                swap(nums,cur,right--);
-            }
-        }
-        return nums;
-    }
-
-    public void swap(int[] nums, int a, int b) {
-        int tmp = nums[a];
-        nums[a] = nums[b];
-        nums[b] = tmp;
-    }
 }

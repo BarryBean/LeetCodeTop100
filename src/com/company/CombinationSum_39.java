@@ -16,9 +16,6 @@ import java.util.Queue;
 public class CombinationSum_39 {
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> lists = new ArrayList<>();
-        if (candidates == null || candidates.length == 0) {
-            return lists;
-        }
         if (candidates == null || candidates.length == 0 || target == 0) {
             return lists;
         }
@@ -43,13 +40,4 @@ public class CombinationSum_39 {
             sum -= candidates[j];
         }
     }
-
-    public static void main(String[] args) {
-        int[] candidates = {2, 3, 5, 7};
-        int target = 7;
-        System.out.println(combinationSum(candidates, target));
-
-    }
-
-
 }

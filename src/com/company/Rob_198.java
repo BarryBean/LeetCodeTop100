@@ -33,8 +33,4 @@ public class Rob_198 {
         return res;
     }
 
-    public static void main(String[] args) {
-        int[] num = {1, 2, 3, 1};
-        System.out.println(rob(num));
-    }
 }

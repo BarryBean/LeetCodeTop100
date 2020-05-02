@@ -17,16 +17,16 @@ public class GenerateParenthesis_22 {
      * @param n
      * @return
      */
-    static List<String> list;
 
-    public static List<String> generateParenthesis(int n) {
+    List<String> list;
+
+    public List<String> generateParenthesis(int n) {
         list = new ArrayList<>();
         process(0, 0, n, new StringBuffer());
         return list;
     }
 
-
-    public static void process(int ln, int rn, int n, StringBuffer str) {
+    public void process(int ln, int rn, int n, StringBuffer str) {
         if (ln > n || rn > n || ln < rn) {
             return;
         }
@@ -34,17 +34,12 @@ public class GenerateParenthesis_22 {
             list.add(str.toString());
         }
 
-        process(++ln , rn, n, str.append("("));
+        process(++ln, rn, n, str.append("("));
         str.deleteCharAt(str.lastIndexOf("("));
         ln--;
 
-        process(ln, ++rn , n, str.append(")"));
+        process(ln, ++rn, n, str.append(")"));
         str.deleteCharAt(str.lastIndexOf(")"));
         rn--;
-    }
-
-
-    public static void main(String[] args) {
-        System.out.println(generateParenthesis(3));
     }
 }

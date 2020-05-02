@@ -41,18 +41,7 @@ public class Merge_56 {
             intervals[i][1] = end > intervals[i][1] ? end : intervals[i][1];
             end = end < tmp ? tmp : end;
             intervals[i][0] = intervals[i - 1][0];
-
         }
         lists.add(intervals[intervals.length - 1]);
-    }
-
-    public static void main(String[] args) {
-        int[][] nums = {{1, 3}, {2, 6}, {8, 10}, {15, 18}, {9, 13}, {12, 19}};
-        for (int[] ints : merge(nums)) {
-            for (int i : ints) {
-                System.out.print(i + " ");
-            }
-            System.out.print(",");
-        }
     }
 }

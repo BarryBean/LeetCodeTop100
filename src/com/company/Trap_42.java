@@ -70,38 +70,4 @@ public class Trap_42 {
         return sum;
     }
 
-    public static void main(String[] args) {
-        int[] height = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
-        System.out.println(trap(height));
-
-    }
-
-    public static int[] spiralOrder(int[][] matrix) {
-        int top = 0, bottom = matrix.length - 1, left = 0, right = matrix[0].length - 1;
-        int[] ret = new int[(bottom + 1) * (right + 1)];
-        int index = 0;
-        while (top <= bottom && left <= right) {
-            for (int i = left; i <= right; i++) {
-                ret[index++] = matrix[top][i];
-            }
-            for (int i = top + 1; i <= bottom; i++) {
-                ret[index++] = matrix[i][right];
-            }
-            if (top != bottom) {
-                for (int i = right - 1; i >= left; i--) {
-                    ret[index++] = matrix[bottom][i];
-                }
-            }
-            if (left != right) {
-                for (int i = bottom - 1; i > top; i--) {
-                    ret[index++] = matrix[i][left];
-                }
-            }
-            top++;
-            right--;
-            bottom--;
-            left++;
-        }
-        return ret;
-    }
 }

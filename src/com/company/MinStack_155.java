@@ -52,7 +52,4 @@ public class MinStack_155 {
         return minStack.peek();
     }
 
-    public static void main(String[] args) {
-
-    }
 }

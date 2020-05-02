@@ -42,56 +42,33 @@ public class IsPalindrome_234 {
      * @return
      */
     public static boolean isPalindrome1(ListNode head) {
-        if (head == null) {
+        if (head == null || head.next == null) {
             return true;
         }
-        ListNode fast = head, slow = head;
-        while (fast.next != null && fast.next.next != null) {
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode slow = dummy, fast = dummy;
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
-        //将后半部分逆转
-        fast = slow.next;
-        ListNode tmp = null;
-        slow.next = null;
-        while (fast != null) {
-            tmp = fast.next;
-            fast.next = slow;
-            slow = fast;
-            fast = tmp;
+        ListNode cur = slow.next, pre = slow;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
         }
-        //逆转后同时从左和右进行判断
-        //此时slow指向最后一个结点，fast为null
-        fast = head;
-        tmp = slow;
-        boolean isPalind = true;
-        while (slow != null && fast != null) {
-            if (slow.val != fast.val) {
-                isPalind = false;
-                break;
+        slow.next = null;
+        slow = head;
+        while (slow != null && pre != null) {
+            if (slow.val != pre.val) {
+                return false;
             }
             slow = slow.next;
-            fast = fast.next;
+            pre = pre.next;
         }
-        //将后半部分恢复正常
-        slow = tmp.next;
-        tmp.next = null;
-        while (slow != null) {
-            fast = slow.next;
-            slow.next = tmp;
-            tmp = slow;
-            slow = fast;
-        }
-        return isPalind;
+        return true;
     }
 
-    public static void main(String[] args) {
-
-        ListNode node = new ListNode(1);
-        //node.next = new ListNode(2);
-        //node.next.next = new ListNode(3);
-        //node.next.next.next = new ListNode(2);
-        //node.next.next.next.next = new ListNode(1);
-        System.out.println(isPalindrome1(node));
-    }
 }

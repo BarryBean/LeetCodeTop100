@@ -62,12 +62,4 @@ public class FindDisappearedNumbers_448 {
         return list;
     }
 
-
-    public static void main(String[] args) {
-        int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
-        List<Integer> list = findDisappearedNumbers(nums);
-        for (int tmp : list) {
-            System.out.print(tmp + " ");
-        }
-    }
 }

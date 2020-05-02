@@ -61,10 +61,4 @@ public class LetterCombinations_17 {
             process(s, index + 1, sub + s[index].charAt(i));
         }
     }
-
-    public static void main(String[] args) {
-        for (String s : letterCombinations("235")) {
-            System.out.print(s + " ");
-        }
-    }
 }

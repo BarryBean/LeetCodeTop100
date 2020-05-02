@@ -8,31 +8,9 @@ package com.company;
  * @Date:2020/2/10 17:01
  */
 public class MoveZeroes_283 {
-    /**
-     * 嵌套循环时间长
-     *
-     * @param nums
-     */
-    public static void moveZeroes1(int[] nums) {
+    public void moveZeroes(int[] nums) {
+        int j = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 0) {
-                for (int j = i + 1; j < nums.length; j++) {
-                    if (nums[j] != 0) {
-                        swap(nums, i, j);
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
-    /**
-     * 最佳方法
-     * @param nums
-     */
-    public static void moveZeroes(int[] nums) {
-        int i = 0, j = 0;
-        for (i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
                 nums[j++] = nums[i];
             }
@@ -42,17 +20,18 @@ public class MoveZeroes_283 {
         }
     }
 
-    public static void swap(int[] nums, int a, int b) {
-        nums[a] = nums[a] ^ nums[b];
-        nums[b] = nums[b] ^ nums[a];
-        nums[a] = nums[a] ^ nums[b];
+    public void moveZeroes1(int[] nums) {
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                swap(nums, i, j++);
+            }
+        }
     }
 
-    public static void main(String[] args) {
-        int[] nums = {0, 1, 0, 3, 12};
-        moveZeroes(nums);
-        for (int i = 0; i < nums.length; i++) {
-            System.out.print(nums[i] + " ");
-        }
+    public void swap(int[] nums, int a, int b) {
+        int tmp = nums[a];
+        nums[a] = nums[b];
+        nums[b] = tmp;
     }
 }

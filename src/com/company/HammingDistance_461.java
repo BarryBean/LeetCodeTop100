@@ -54,8 +54,4 @@ public class HammingDistance_461 {
         return count;
     }
 
-    public static void main(String[] args) {
-        System.out.println(hammingDistance(1, 4));
-    }
-
 }

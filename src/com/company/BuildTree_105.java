@@ -12,6 +12,7 @@ import java.util.Arrays;
 public class BuildTree_105 {
     /**
      * 取巧，用了Arrays.copyOfRange，每次内部都在做创建赋值的操作
+     *
      * @param preorder
      * @param inorder
      * @return
@@ -34,6 +35,7 @@ public class BuildTree_105 {
 
     /**
      * 纯粹通过限定前序和后序边界做，不用额外的空间
+     *
      * @param preorder
      * @param inorder
      * @return
@@ -61,13 +63,5 @@ public class BuildTree_105 {
         root.left = process(preorder, prebegin + 1, prebegin + mid - inbegin, inorder, inbegin, mid - 1);
         root.right = process(preorder, prebegin + mid - inbegin + 1, preend, inorder, mid + 1, inend);
         return root;
-    }
-
-
-    public static void main(String[] args) {
-        int[] pre = {1, 2};
-        int[] in = {2, 1};
-        TreeNode node = buildTree2(pre, in);
-        System.out.println(node);
     }
 }

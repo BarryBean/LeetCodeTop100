@@ -39,18 +39,7 @@ public class IsValidBST_98 {
             process(root.right);
         }
     }
-    public static boolean process1(TreeNode root) {
-        if(root==null) return true;
-        if (root != null) {
-            process(root.left);
-            if(preNode.val > root.val){
-                return false;
-            }
-            preNode = root;
-            process(root.right);
-        }
-        return true;
-    }
+
 
     /**
      * 非递归中序遍历判断BST
@@ -78,15 +67,5 @@ public class IsValidBST_98 {
             }
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(7);
-        root.right.left = new TreeNode(5);
-        System.out.println(isValidBST(root));
     }
 }

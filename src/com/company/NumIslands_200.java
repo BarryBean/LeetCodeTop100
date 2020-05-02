@@ -40,8 +40,4 @@ public class NumIslands_200 {
         infect(grid, row, i, col, j + 1);
         infect(grid, row, i, col, j - 1);
     }
-
-    public static void main(String[] args) {
-        char[][] matix = {};
-    }
 }

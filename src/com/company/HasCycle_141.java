@@ -25,9 +25,4 @@ public class HasCycle_141 {
         return true;
 
     }
-
-    public static void main(String[] args) {
-        ListNode node = new ListNode(3);
-        System.out.println(hasCycle(node));
-    }
 }
